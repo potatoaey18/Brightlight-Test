@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Brightlight - Technology Solutions</title>
+  <meta name="description" content="Brightlight.tel provides high-speed network system solutions for HPC, data centers, enterprise, and telecom sectors.">
+  <meta name="keywords" content="Brightlight, network solutions, high-speed networking, HPC, data centers, telecom">
+  <link href="assets/img/logo.png" rel="icon">
+  <link href="assets/img/logo.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .product-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      filter: brightness(1.3) contrast(1.1);
+      border: 2px solid var(--accent-color);
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .pagination .page-link {
+      color: var(--default-color);
+      background-color: var(--surface-color);
+      border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+    }
+    .pagination .page-link:hover {
+      background-color: var(--accent-color);
+      color: #000000;
+    }
+    .pagination .page-item.active .page-link {
+      background-color: var(--accent-color);
+      border-color: var(--accent-color);
+      color: #000000;
+    }
+    .modal-content {
+      background-color: var(--surface-color);
+      border: 2px solid var(--accent-color);
+    }
+    .modal-header {
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+    .modal-title {
+      color: var(--heading-color);
+      font-family: var(--heading-font);
+    }
+    .modal-body img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      filter: brightness(1.3) contrast(1.1);
+      border: 2px solid var(--accent-color);
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .modal-footer .btn {
+      background-color: var(--accent-color);
+      color: #000000;
+      border: none;
+      border-radius: 4px;
+    }
+    .modal-footer .btn:hover {
+      background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    }
+  </style>
+</head>
+<body class="products-page">
+  <header id="header" class="header sticky-top">
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="d-none d-md-flex align-items-center">
+          <i class="bi bi-clock me-1"></i> Singapore, Taiwan, Philippines
+        </div>
+        <div class="d-flex align-items-center">
+          <a><i class="bi bi-phone me-1"></i> Contact Us </a>
+        </div>
+      </div>
+    </div>
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-end">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="assets/img/logo.png" alt="Brightlight Logo">
+          <h1 class="sitename">Brightlight</h1>
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+        <a class="cta-btn" href="contact.html">Request a Quote</a>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section id="products" class="tabs section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Products</h2>
+        <p>Explore our extensive range of networking solutions.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tabs-tab-1">Optical Receivers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-2">Network Cables</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-3">Power Hardware</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tabs-tab-4">Others</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tabs-tab-1">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1">
+                    <h3>Optical Receivers</h3>
+                    <p class="fst-italic">High-speed silicon optical receivers for reliable data transfer.</p>
+                    <p>Our optical receivers ensure high-performance connectivity for data centers and telecom networks, built with cutting-edge technology for maximum reliability.</p>
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="optical-receivers-page-1">
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP" data-product-desc="Standard SFP for 1G connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=1">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=1" alt="SFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">SFP</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP+" data-product-desc="Enhanced SFP+ for 10G networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=2">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=2" alt="SFP+" class="product-img">
+                          <h4><a href="#" class="stretched-link">SFP+</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP28" data-product-desc="25G SFP28 for high-speed enterprise." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=3">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=3" alt="SFP28" class="product-img">
+                          <h4><a href="#" class="stretched-link">SFP28</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="QSFP+" data-product-desc="40G QSFP+ for data center applications." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=4">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=4" alt="QSFP+" class="product-img">
+                          <h4><a href="#" class="stretched-link">QSFP+</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="QSFP28" data-product-desc="100G QSFP28 for telecom networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=5">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=5" alt="QSFP28" class="product-img">
+                          <h4><a href="#" class="stretched-link">QSFP28</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SX SFP" data-product-desc="Short-range SX SFP for multimode fiber." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=6">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=6" alt="SX SFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">SX SFP</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="LX SFP" data-product-desc="Long-range LX SFP for single-mode fiber." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=7">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=7" alt="LX SFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">LX SFP</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="ZX SFP" data-product-desc="Extended-range ZX SFP for long-haul." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=8">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=8" alt="ZX SFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">ZX SFP</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="BX SFP" data-product-desc="Bidirectional BX SFP for single-fiber use." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=9">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=9" alt="BX SFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">BX SFP</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-4 d-none" id="optical-receivers-page-2">
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="EX SFP" data-product-desc="Extended-reach EX SFP for metro networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=10">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=10" alt="EX SFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">EX SFP</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CFP" data-product-desc="100G CFP for high-capacity networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=11">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=11" alt="CFP" class="product-img">
+                          <h4><a href="#" class="stretched-link">CFP</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CPAK" data-product-desc="Compact CPAK for 100G applications." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=12">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=12" alt="CPAK" class="product-img">
+                          <h4><a href="#" class="stretched-link">CPAK</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CFP2" data-product-desc="Next-gen CFP2 for high-density 100G/200G." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=13">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=13" alt="CFP2" class="product-img">
+                          <h4><a href="#" class="stretched-link">CFP2</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CXP" data-product-desc="High-bandwidth CXP for data center interconnects." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=14">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=14" alt="CXP" class="product-img">
+                          <h4><a href="#" class="stretched-link">CXP</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                    <nav aria-label="Page navigation" class="mt-4">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#" data-page="1" data-tab="optical-receivers">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#" data-page="2" data-tab="optical-receivers">2</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-2">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1">
+                    <h3>Network Cables</h3>
+                    <p class="fst-italic">High-quality cabling solutions for seamless connectivity.</p>
+                    <p>Our cables provide low-latency, high-bandwidth solutions for data centers and telecom applications, ensuring reliable performance.</p>
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="network-cables-page-1">
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Twisted Pair Cables (Copper)" data-product-desc="Versatile copper cables for Ethernet networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=15">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=15" alt="Twisted Pair Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Twisted Pair Cables (Copper)</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Coaxial Cables (Copper)" data-product-desc="Robust coaxial cables for RF applications." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=16">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=16" alt="Coaxial Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Coaxial Cables (Copper)</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Fiber Optic Cables" data-product-desc="High-speed fiber for long-distance connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=17">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=17" alt="Fiber Optic Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Fiber Optic Cables</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Single-mode Fiber (SMF)" data-product-desc="SMF for long-haul telecom networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=18">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=18" alt="Single-mode Fiber" class="product-img">
+                          <h4><a href="#" class="stretched-link">Single-mode Fiber (SMF)</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Multimode Fiber (MMF)" data-product-desc="MMF for short-range data center links." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=19">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=19" alt="Multimode Fiber" class="product-img">
+                          <h4><a href="#" class="stretched-link">Multimode Fiber (MMF)</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="RRU Cable" data-product-desc="RRU cables for radio unit connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=20">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=20" alt="RRU Cable" class="product-img">
+                          <h4><a href="#" class="stretched-link">RRU Cable</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="RF Cables" data-product-desc="RF cables for wireless infrastructure." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=21">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=21" alt="RF Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">RF Cables</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Optical Fiber Cables" data-product-desc="High-capacity optical cables for broadband." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=22">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=22" alt="Optical Fiber Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Optical Fiber Cables</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power Cables" data-product-desc="Durable power cables for network equipment." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=23">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=23" alt="Power Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Power Cables</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row row-cols-1 row-cols-md-3 g-4 d-none" id="network-cables-page-2">
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Grounding and Earthing Cables" data-product-desc="Ensures safety with grounding solutions." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=24">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=24" alt="Grounding and Earthing Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Grounding and Earthing Cables</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="E1 Cables" data-product-desc="E1 cables for legacy telecom systems." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=25">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=25" alt="E1 Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">E1 Cables</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Ethernet/IP Cables" data-product-desc="High-speed Ethernet cables for IP networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=26">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=26" alt="Ethernet/IP Cables" class="product-img">
+                          <h4><a href="#" class="stretched-link">Ethernet/IP Cables</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                    <nav aria-label="Page navigation" class="mt-4">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#" data-page="1" data-tab="network-cables">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#" data-page="2" data-tab="network-cables">2</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-3">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1">
+                    <h3>Power Hardware</h3>
+                    <p class="fst-italic">Reliable power solutions for robust network infrastructure.</p>
+                    <p>Our power hardware ensures uninterrupted power supply and safety for enterprise and data center environments.</p>
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="power-hardware-page-1">
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Rectifiers" data-product-desc="Converts AC to DC for network equipment." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=27">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=27" alt="Rectifiers" class="product-img">
+                          <h4><a href="#" class="stretched-link">Rectifiers</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Battery Banks" data-product-desc="Backup power for uninterrupted operations." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=28">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=28" alt="Battery Banks" class="product-img">
+                          <h4><a href="#" class="stretched-link">Battery Banks</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="UPS" data-product-desc="Uninterruptible power supply for critical systems." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=29">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=29" alt="UPS" class="product-img">
+                          <h4><a href="#" class="stretched-link">UPS</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power Distribution Units" data-product-desc="Distributes power efficiently in data centers." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=30">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=30" alt="Power Distribution Units" class="product-img">
+                          <h4><a href="#" class="stretched-link">Power Distribution Units</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Grounding and Lightning Protection" data-product-desc="Protects equipment from electrical surges." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=31">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=31" alt="Grounding and Lightning Protection" class="product-img">
+                          <h4><a href="#" class="stretched-link">Grounding and Lightning Protection</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power System Controllers/SMUs" data-product-desc="Manages power systems for optimal performance." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=32">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=32" alt="Power System Controllers/SMUs" class="product-img">
+                          <h4><a href="#" class="stretched-link">Power System Controllers/SMUs</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Primary Power Sources (AC and DC)" data-product-desc="Reliable AC/DC power for network infrastructure." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=33">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=33" alt="Primary Power Sources" class="product-img">
+                          <h4><a href="#" class="stretched-link">Primary Power Sources (AC and DC)</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                    <nav aria-label="Page navigation" class="mt-4">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#" data-page="1" data-tab="power-hardware">1</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-4">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1">
+                    <h3>Others</h3>
+                    <p class="fst-italic">Comprehensive networking solutions for diverse applications.</p>
+                    <p>Our range of specialized products supports various networking needs, ensuring flexibility and performance.</p>
+                    <div class="row row-cols-1 row-cols-md-3 g-4" id="others-page-1">
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Radio Access Network" data-product-desc="Supports mobile network connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=34">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=34" alt="Radio Access Network" class="product-img">
+                          <h4><a href="#" class="stretched-link">Radio Access Network</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Outside Plant" data-product-desc="Robust solutions for outdoor networking." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=35">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=35" alt="Outside Plant" class="product-img">
+                          <h4><a href="#" class="stretched-link">Outside Plant</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Transmission" data-product-desc="High-capacity transmission equipment." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=36">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=36" alt="Transmission" class="product-img">
+                          <h4><a href="#" class="stretched-link">Transmission</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Antenna" data-product-desc="Advanced antennas for wireless networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=37">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=37" alt="Antenna" class="product-img">
+                          <h4><a href="#" class="stretched-link">Antenna</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Core Network" data-product-desc="Backbone solutions for telecom networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=38">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=38" alt="Core Network" class="product-img">
+                          <h4><a href="#" class="stretched-link">Core Network</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="IP Network" data-product-desc="Scalable IP networking solutions." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=39">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=39" alt="IP Network" class="product-img">
+                          <h4><a href="#" class="stretched-link">IP Network</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Enterprise Solutions" data-product-desc="Custom networking for enterprise needs." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=40">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=40" alt="Enterprise Solutions" class="product-img">
+                          <h4><a href="#" class="stretched-link">Enterprise Solutions</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="In-building Solutions" data-product-desc="Indoor networking for seamless connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=41">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=41" alt="In-building Solutions" class="product-img">
+                          <h4><a href="#" class="stretched-link">In-building Solutions</a></h4>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="ICT" data-product-desc="Integrated ICT solutions for modern networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=42">
+                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=42" alt="ICT" class="product-img">
+                          <h4><a href="#" class="stretched-link">ICT</a></h4>
+                        </div>
+                      </div>
+                    </div>
+                    <nav aria-label="Page navigation" class="mt-4">
+                      <ul class="pagination justify-content-center">
+                        <li class="page-item"><a class="page-link" href="#" data-page="1" data-tab="others">1</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img id="modalProductImg" src="" alt="Product Image" class="img-fluid">
+            <p id="modalProductDesc"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer id="footer" class="footer light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="assets/img/" alt="Brightlight Footer Logo">
+            <span class="sitename">Brightlight</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p class="mt-3"><strong>Phone:</strong></p>
+            <p>Singapore: +65 9123 4567</p>
+            <p>Taiwan: +886 912 345 678</p>
+            <p>Philippines: +63 912 345 6789</p>
+            <p><strong>Email:</strong> <span>sales@brightlight.tel</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html#product-development">Product Development</a></li>
+            <li><a href="services.html#solution-design">Solution Design</a></li>
+            <li><a href="services.html#testing-services">Testing Services</a></li>
+            <li><a href="services.html#online-procurement">Online Procurement</a></li>
+            <li><a href="services.html#technical-support">Technical Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="#">HPC</a></li>
+            <li><a href="#">Data Centers</a></li>
+            <li><a href="#">Enterprise</a></li>
+            <li><a href="#">Telecom</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Brightlight</strong> <span>All Rights Reserved</span></p>
+    </div>
+  </footer>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Modal content update
+    document.addEventListener('DOMContentLoaded', function () {
+      const productItems = document.querySelectorAll('.service-item');
+      productItems.forEach(item => {
+        item.addEventListener('click', function () {
+          const name = this.getAttribute('data-product-name');
+          const desc = this.getAttribute('data-product-desc');
+          const img = this.getAttribute('data-product-img');
+          document.getElementById('productModalLabel').textContent = name;
+          document.getElementById('modalProductDesc').textContent = desc;
+          document.getElementById('modalProductImg').src = img;
+        });
+      });
+
+      // Pagination handling
+      const paginationLinks = document.querySelectorAll('.page-link');
+      paginationLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const page = this.getAttribute('data-page');
+          const tab = this.getAttribute('data-tab');
+          const pages = document.querySelectorAll(`#${tab}-page-${page}`);
+          const allPages = document.querySelectorAll(`[id^="${tab}-page-"]`);
+          allPages.forEach(pg => pg.classList.add('d-none'));
+          pages.forEach(pg => pg.classList.remove('d-none'));
+          const pageItems = this.parentElement.parentElement.querySelectorAll('.page-item');
+          pageItems.forEach(pi => pi.classList.remove('active'));
+          this.parentElement.classList.add('active');
+        });
+      });
+
+      // Set first page as active for each tab
+      document.querySelectorAll('.nav-link').forEach(tab => {
+        tab.addEventListener('click', function () {
+          const tabId = this.getAttribute('href').substring(1);
+          const firstPage = document.querySelector(`#${tabId} [id$="-page-1"]`);
+          const allPages = document.querySelectorAll(`#${tabId} [id$="-page-"]`);
+          allPages.forEach(pg => pg.classList.add('d-none'));
+          if (firstPage) firstPage.classList.remove('d-none');
+          const pagination = document.querySelector(`#${tabId} .pagination`);
+          if (pagination) {
+            pagination.querySelectorAll('.page-item').forEach(pi => pi.classList.remove('active'));
+            const firstPageItem = pagination.querySelector('.page-item:first-child');
+            if (firstPageItem) firstPageItem.classList.add('active');
+          }
+        });
+      });
+
+      // Initialize first tab
+      document.querySelector('#tabs-tab-1 [id$="-page-1"]').classList.remove('d-none');
+      document.querySelector('#tabs-tab-1 .pagination .page-item:first-child').classList.add('active');
+    });
+  </script>
+</body>
+</html>
