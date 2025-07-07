@@ -18,6 +18,28 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .info-item {
+      min-height: 200px; /* Ensure email and phone containers have the same minimum height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .php-email-form h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .php-email-form .form-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body class="contact-page">
   <header id="header" class="header sticky-top">
@@ -52,13 +74,10 @@
     </div>
   </header>
   <main class="main">
-    <section id="contact" class="contact section">
+    <sectionSSP id="contact" class="contact section">
       <div class="container section-title">
         <h2>Contact</h2>
         <p>Get in touch with Brightlight for your networking needs.</p>
-      </div>
-      <div class="mb-5">
-        <img src="assets/img/Philippines.jpg" alt="Map of Singapore, Taiwan, and Philippines" class="img-fluid" style="width: 100%; height: 370px;">
       </div>
       <div class="container">
         <div class="row gy-4">
@@ -81,26 +100,36 @@
                 </div>
               </div>
             </div>
+            <div class="mt-4">
+              <img src="assets/img/Philippines.jpg" alt="Map of Singapore, Taiwan, and Philippines" class="img-fluid" style="width: 100%; height: auto;">
+            </div>
           </div>
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="post" class="php-email-form">
+              <input type="hidden" name="access_key" value="587cbf79-1831-4b6d-99f6-08a99ceed638">
+              <h3>Let's Connect!</h3>
+              <p>We're excited to hear from you. Share your details and message below.</p>
               <div class="row gy-4">
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <label class="form-label" for="name">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
                 </div>
                 <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <label class="form-label" for="email">Your Email</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
                 </div>
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <label class="form-label" for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" class="form-control" placeholder="What's this about?" required>
                 </div>
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+                  <label class="form-label" for="message">Your Message</label>
+                  <textarea id="message" name="message" class="form-control" rows="4" placeholder="Tell us how we can help" required></textarea>
                 </div>
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <div class="loading" style="display: none;">Loading</div>
+                  <div class="error-message form-message" style="display: none;"></div>
+                  <div class="sent-message form-message" style="display: none;">Your message has been sent. Thank you!</div>
                   <button type="submit">Send Message</button>
                 </div>
               </div>
@@ -134,20 +163,21 @@
           <h4>Useful Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="services.html#product-development">Product Development</a></li>
-            <li><a href="services.html#solution-design">Solution Design</a></li>
-            <li><a href="services.html#testing-services">Testing Services</a></li>
-            <li><a href="services.html#online-procurement">Online Procurement</a></li>
-            <li><a href="services.html#technical-support">Technical Support</a></li>
+            <li><a href="services.html#in-building-solution">In-building Solution</a></li>
+            <li><a href="services.html#asset-recovery">Asset Recovery</a></li>
+            <li><a href="services.html#installation-deployment">Host and Deployment</a></li>
+            <li><a href="services.html#maintenance">Maintenance</a></li>
+            <li><a href="services.html#decommissioned-hardware-purchasing">Decommissioned Hardware Purchasing</a></li>
+            <li><a href="services.html#network-optimization">Network Optimization</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-3 footer-links">
@@ -159,7 +189,6 @@
             <li><a href="#">Telecom</a></li>
           </ul>
         </div>
-        
       </div>
     </div>
     <div class="container copyright text-center mt-4">
@@ -169,11 +198,41 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    const form = document.getElementById('contact-form');
+    const formMessage = document.querySelector('.form-message');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      formMessage.style.display = 'none';
+      formMessage.className = 'form-message';
+
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          formMessage.textContent = 'Your message has been sent. Thank you!';
+          formMessage.className = 'form-message sent-message';
+          formMessage.style.display = 'block';
+          form.reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (error) {
+        formMessage.textContent = 'Oops! There was an error sending your message.';
+        formMessage.className = 'form-message error-message';
+        formMessage.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>

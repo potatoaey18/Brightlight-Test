@@ -19,19 +19,85 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
   <style>
+    /* General responsive adjustments */
+    body {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Header adjustments for mobile */
+    .header .branding {
+      padding: 10px 0;
+    }
+    
+    .navmenu ul li {
+      margin: 5px 0;
+    }
+    .cta-btn {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+    .mobile-nav-toggle {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    /* Product section */
+    .tabs .section-title h2 {
+      font-size: 1.8rem;
+    }
+    .tabs .section-title p {
+      font-size: 1rem;
+    }
+
+    /* Service item */
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
     .product-img {
       width: 100%;
-      height: 150px;
+      height: 200px;
       object-fit: cover;
-      filter: brightness(1.3) contrast(1.1);
       border: 2px solid var(--accent-color);
       border-radius: 4px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
+    .service-item h4 {
+      margin: 0;
+      padding: 0 10px;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+    .service-item p {
+      font-size: 0.9rem;
+      color: color-mix(in srgb, var(--default-color), transparent 20%);
+      text-align: center;
+      margin: 5px 10px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* Pagination */
     .pagination .page-link {
       color: var(--default-color);
       background-color: var(--surface-color);
       border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+      padding: 8px 12px;
+      font-size: 0.9rem;
+      min-width: 40px;
+      text-align: center;
     }
     .pagination .page-link:hover {
       background-color: var(--accent-color);
@@ -42,34 +108,192 @@
       border-color: var(--accent-color);
       color: #000000;
     }
+
+    /* Modal styles */
     .modal-content {
-      background-color: var(--surface-color);
       border: 2px solid var(--accent-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
     }
     .modal-header {
-      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      padding: 1rem;
     }
     .modal-title {
       color: var(--heading-color);
       font-family: var(--heading-font);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      width: 100%;
+    }
+    .modal-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .modal-body img {
-      width: 100%;
-      height: 200px;
+      width: 400px;
+      height: 400px;
       object-fit: cover;
-      filter: brightness(1.3) contrast(1.1);
       border: 2px solid var(--accent-color);
-      border-radius: 4px;
+      border-radius: 8px;
       margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .modal-body p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--default-color);
+      text-align: center;
+      max-width: 90%;
+    }
+    .modal-footer {
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      padding: 1rem;
+      justify-content: center;
     }
     .modal-footer .btn {
       background-color: var(--accent-color);
       color: #000000;
       border: none;
       border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      min-width: 120px;
     }
     .modal-footer .btn:hover {
       background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    }
+    .modal-footer .btn-secondary {
+      background-color: color-mix(in srgb, var(--default-color), transparent 20%);
+      color: #000000;
+    }
+    .modal-footer .btn-secondary:hover {
+      background-color: color-mix(in srgb, var(--default-color), transparent 40%);
+    }
+
+    /* Help link */
+    .help-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .help-link:hover {
+      color: color-mix(in srgb, var(--accent-color), transparent 20%);
+      text-decoration: underline;
+    }
+
+    /* Footer adjustments */
+    .footer .footer-contact p {
+      font-size: 0.9rem;
+    }
+    .footer .social-links a {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      line-height: 40px;
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 991px) {
+      .tabs .row {
+        flex-direction: column;
+      }
+      .tabs .col-lg-3,
+      .tabs .col-lg-9 {
+        width: 100%;
+      }
+      .nav-tabs {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav-tabs .nav-item {
+        flex: 1 1 45%;
+        margin: 5px;
+      }
+      .nav-tabs .nav-link {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+      .service-item {
+        height: 280px;
+      }
+      .product-img {
+        height: 180px;
+      }
+      .service-item h4 {
+        font-size: 1rem;
+      }
+      .service-item p {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .tabs .section-title h2 {
+        font-size: 1.5rem;
+      }
+      .tabs .section-title p {
+        font-size: 0.9rem;
+      }
+      .row-cols-md-3 {
+        grid-template-columns: 1fr;
+      }
+      .service-item {
+        height: 260px;
+      }
+      .product-img {
+        height: 160px;
+      }
+      .modal-dialog {
+        margin: 1rem;
+        max-width: 95%;
+      }
+      .modal-title {
+        font-size: 1.2rem;
+      }
+      .modal-body p {
+        font-size: 0.9rem;
+      }
+      .modal-footer .btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+        min-width: 100px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .modal-body img {
+        width: 250px;
+        height: 250px;
+      }
+      .nav-tabs .nav-item {
+        flex: 1 1 100%;
+      }
+      .nav-tabs .nav-link {
+        font-size: 0.85rem;
+      }
+      .header .topbar {
+        font-size: 0.85rem;
+        padding: 5px 0;
+      }
+      .branding .logo img {
+        width: 30px;
+      }
+      .sitename {
+        font-size: 1.2rem;
+      }
+      .cta-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+      }
     }
   </style>
 </head>
@@ -86,8 +310,8 @@
       </div>
     </div>
     <div class="branding d-flex align-items-center">
-      <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
           <img src="assets/img/logo.png" alt="Brightlight Logo">
           <h1 class="sitename">Brightlight</h1>
         </a>
@@ -101,7 +325,7 @@
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-        <a class="cta-btn" href="contact.html">Request a Quote</a>
+        <a class="cta-btn d-none d-lg-block" href="contact.html">Request a Quote</a>
       </div>
     </div>
   </header>
@@ -136,92 +360,106 @@
                   <div class="col-lg-12 details order-2 order-lg-1">
                     <h3>Optical Receivers</h3>
                     <p class="fst-italic">High-speed silicon optical receivers for reliable data transfer.</p>
-                    <p>Our optical receivers ensure high-performance connectivity for data centers and telecom networks, built with cutting-edge technology for maximum reliability.</p>
+                    <p>Our optical receivers deliver unparalleled performance for data centers and telecom, leveraging advanced silicon photonics for high-speed, low-latency connectivity.</p>
                     <div class="row row-cols-1 row-cols-md-3 g-4" id="optical-receivers-page-1">
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP" data-product-desc="Standard SFP for 1G connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=1">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=1" alt="SFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP" data-product-desc="The SFP module offers reliable 1G connectivity, ideal for enterprise networks and data centers. Supporting both single-mode and multimode fiber, it ensures low-latency data transfer with high compatibility across various switches and routers. Perfect for cost-effective, high-performance networking solutions." data-product-img="assets/img/optical-transceivers/sfp.jpeg">
+                          <img src="assets/img/optical-transceivers/sfp.jpeg" alt="SFP" class="product-img">
                           <h4><a href="#" class="stretched-link">SFP</a></h4>
+                          <p>Reliable 1G connectivity for enterprise networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP+" data-product-desc="Enhanced SFP+ for 10G networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=2">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=2" alt="SFP+" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP+" data-product-desc="The SFP+ module delivers blazing-fast 10G connectivity for high-bandwidth applications. Designed for data centers and telecom, it supports long-range single-mode fiber and short-range multimode fiber, ensuring robust performance and scalability for modern networks." data-product-img="assets/img/optical-transceivers/spf+.png">
+                          <img src="assets/img/optical-transceivers/spf+.png" alt="SFP+" class="product-img">
                           <h4><a href="#" class="stretched-link">SFP+</a></h4>
+                          <p>Blazing-fast 10G connectivity for high-bandwidth needs.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP28" data-product-desc="25G SFP28 for high-speed enterprise." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=3">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=3" alt="SFP28" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SFP28" data-product-desc="The SFP28 module provides 25G connectivity, optimized for high-speed enterprise and cloud environments. With low power consumption and compatibility with existing SFP+ infrastructure, it’s perfect for upgrading data center networks with minimal disruption." data-product-img="assets/img/optical-transceivers/spf28.png">
+                          <img src="assets/img/optical-transceivers/spf28.png" alt="SFP28" class="product-img">
                           <h4><a href="#" class="stretched-link">SFP28</a></h4>
+                          <p>25G connectivity for high-speed enterprise networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="QSFP+" data-product-desc="40G QSFP+ for data center applications." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=4">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=4" alt="QSFP+" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="QSFP+" data-product-desc="The QSFP+ module supports 40G connectivity, ideal for data center interconnects and high-performance computing. Offering low-latency and high-density connections, it ensures seamless scalability for demanding network environments with robust reliability." data-product-img="assets/img/optical-transceivers/qspf+.png">
+                          <img src="assets/img/optical-transceivers/qspf+.png" alt="QSFP+" class="product-img">
                           <h4><a href="#" class="stretched-link">QSFP+</a></h4>
+                          <p>40G connectivity for data center interconnects.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="QSFP28" data-product-desc="100G QSFP28 for telecom networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=5">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=5" alt="QSFP28" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="QSFP28" data-product-desc="The QSFP28 module delivers 100G connectivity for telecom and data center networks. With support for both short and long-range applications, it provides high bandwidth, low latency, and energy efficiency, perfect for next-gen cloud infrastructure." data-product-img="assets/img/optical-transceivers/qspf28.png">
+                          <img src="assets/img/optical-transceivers/qspf28.png" alt="QSFP28" class="product-img">
                           <h4><a href="#" class="stretched-link">QSFP28</a></h4>
+                          <p>100G connectivity for telecom and cloud networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SX SFP" data-product-desc="Short-range SX SFP for multimode fiber." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=6">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=6" alt="SX SFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="SX SFP" data-product-desc="The SX SFP module is designed for short-range multimode fiber connections, offering reliable 1G performance for enterprise and data center networks. Its compact design ensures easy integration and cost-effective deployment for local network setups." data-product-img="assets/img/optical-transceivers/SX SFP.png">
+                          <img src="assets/img/optical-transceivers/SX SFP.png" alt="SX SFP" class="product-img">
                           <h4><a href="#" class="stretched-link">SX SFP</a></h4>
+                          <p>Short-range 1G connectivity for multimode fiber.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="LX SFP" data-product-desc="Long-range LX SFP for single-mode fiber." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=7">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=7" alt="LX SFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="LX SFP" data-product-desc="The LX SFP module supports long-range single-mode fiber connections at 1G speeds. Ideal for telecom and enterprise applications, it ensures reliable, high-quality data transmission over extended distances with minimal signal loss." data-product-img="assets/img/optical-transceivers/LXSFP.png">
+                          <img src="assets/img/optical-transceivers/LXSFP.png" alt="LX SFP" class="product-img">
                           <h4><a href="#" class="stretched-link">LX SFP</a></h4>
+                          <p>Long-range 1G connectivity for single-mode fiber.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="ZX SFP" data-product-desc="Extended-range ZX SFP for long-haul." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=8">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=8" alt="ZX SFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="ZX SFP" data-product-desc="The ZX SFP module enables extended-range connectivity up to 80km at 1G speeds. Perfect for long-haul telecom applications, it delivers robust performance and reliability for high-demand network environments with single-mode fiber." data-product-img="assets/img/optical-transceivers/ZX SFP.png">
+                          <img src="assets/img/optical-transceivers/ZX SFP.png" alt="ZX SFP" class="product-img">
                           <h4><a href="#" class="stretched-link">ZX SFP</a></h4>
+                          <p>Extended-range 1G connectivity for long-haul telecom.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="BX SFP" data-product-desc="Bidirectional BX SFP for single-fiber use." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=9">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=9" alt="BX SFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="BX SFP" data-product-desc="The BX SFP module supports bidirectional 1G connectivity over a single fiber, reducing cabling costs. Ideal for telecom and enterprise networks, it ensures efficient, high-performance data transmission with minimal infrastructure." data-product-img="assets/img/optical-transceivers/BX SFP.png">
+                          <img src="assets/img/optical-transceivers/BX SFP.png" alt="BX SFP" class="product-img">
                           <h4><a href="#" class="stretched-link">BX SFP</a></h4>
+                          <p>Bidirectional 1G connectivity over single fiber.</p>
                         </div>
                       </div>
                     </div>
                     <div class="row row-cols-1 row-cols-md-3 g-4 d-none" id="optical-receivers-page-2">
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="EX SFP" data-product-desc="Extended-reach EX SFP for metro networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=10">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=10" alt="EX SFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="EX SFP" data-product-desc="The EX SFP module offers extended-reach connectivity up to 40km at 1G speeds. Designed for metro networks, it provides reliable, high-quality performance for enterprise and telecom applications with single-mode fiber." data-product-img="assets/img/optical-transceivers/EX SFP.jpg">
+                          <img src="assets/img/optical-transceivers/EX SFP.jpg" alt="EX SFP" class="product-img">
                           <h4><a href="#" class="stretched-link">EX SFP</a></h4>
+                          <p>Extended-reach 1G connectivity for metro networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CFP" data-product-desc="100G CFP for high-capacity networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=11">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=11" alt="CFP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CFP" data-product-desc="The CFP module supports 100G connectivity for high-capacity networks. Ideal for data centers and telecom, it delivers high bandwidth and scalability, ensuring robust performance for large-scale cloud and enterprise applications." data-product-img="assets/img/optical-transceivers/cfp.jpg">
+                          <img src="assets/img/optical-transceivers/cfp.jpg" alt="CFP" class="product-img">
                           <h4><a href="#" class="stretched-link">CFP</a></h4>
+                          <p>100G connectivity for high-capacity data centers.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CPAK" data-product-desc="Compact CPAK for 100G applications." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=12">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=12" alt="CPAK" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CPAK" data-product-desc="The CPAK module provides compact 100G connectivity, optimized for high-density data center environments. With low power consumption and high compatibility, it’s ideal for scalable, high-performance networking solutions." data-product-img="assets/img/optical-transceivers/CPAK.jpg">
+                          <img src="assets/img/optical-transceivers/CPAK.jpg" alt="CPAK" class="product-img">
                           <h4><a href="#" class="stretched-link">CPAK</a></h4>
+                          <p>Compact 100G connectivity for data centers.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CFP2" data-product-desc="Next-gen CFP2 for high-density 100G/200G." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=13">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=13" alt="CFP2" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CFP2" data-product-desc="The CFP2 module supports high-density 100G/200G connectivity, perfect for next-gen data centers. Offering improved power efficiency and scalability, it ensures seamless performance for high-bandwidth cloud applications." data-product-img="assets/img/optical-transceivers/cfp2.jpg">
+                          <img src="assets/img/optical-transceivers/cfp2.jpg" alt="CFP2" class="product-img">
                           <h4><a href="#" class="stretched-link">CFP2</a></h4>
+                          <p>High-density 100G/200G connectivity for cloud networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CXP" data-product-desc="High-bandwidth CXP for data center interconnects." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=14">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=14" alt="CXP" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="CXP" data-product-desc="The CXP module delivers high-bandwidth connectivity for data center interconnects, supporting up to 100G speeds. Its robust design ensures low-latency performance for high-performance computing and enterprise applications." data-product-img="assets/img/optical-transceivers/cxp.jpg">
+                          <img src="assets/img/optical-transceivers/cxp.jpg" alt="CXP" class="product-img">
                           <h4><a href="#" class="stretched-link">CXP</a></h4>
+                          <p>High-bandwidth 100G connectivity for interconnects.</p>
                         </div>
                       </div>
                     </div>
@@ -231,6 +469,7 @@
                         <li class="page-item"><a class="page-link" href="#" data-page="2" data-tab="optical-receivers">2</a></li>
                       </ul>
                     </nav>
+                    <a href="contact.html" class="help-link">Can't find what you're looking for? Contact Us</a>
                   </div>
                 </div>
               </div>
@@ -242,77 +481,89 @@
                     <p>Our cables provide low-latency, high-bandwidth solutions for data centers and telecom applications, ensuring reliable performance.</p>
                     <div class="row row-cols-1 row-cols-md-3 g-4" id="network-cables-page-1">
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Twisted Pair Cables (Copper)" data-product-desc="Versatile copper cables for Ethernet networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=15">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=15" alt="Twisted Pair Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Twisted Pair Cables (Copper)" data-product-desc="Our twisted pair copper cables deliver reliable Ethernet connectivity for enterprise networks. Supporting up to 10G speeds, they ensure low-latency data transfer with excellent shielding against interference, ideal for office and data center environments." data-product-img="assets/img/network-cables/Twisted Pair Cables (Copper).jpg">
+                          <img src="assets/img/network-cables/Twisted Pair Cables (Copper).jpg" alt="Twisted Pair Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Twisted Pair Cables (Copper)</a></h4>
+                          <p>Reliable Ethernet connectivity for enterprise networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Coaxial Cables (Copper)" data-product-desc="Robust coaxial cables for RF applications." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=16">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=16" alt="Coaxial Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Coaxial Cables (Copper)" data-product-desc="Our coaxial copper cables provide robust connectivity for RF applications in telecom and broadcasting. With superior shielding and durability, they ensure consistent signal quality for high-frequency data transmission in demanding environments." data-product-img="assets/img/network-cables/Coaxial Cables (Copper).jpg">
+                          <img src="assets/img/network-cables/Coaxial Cables (Copper).jpg" alt="Coaxial Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Coaxial Cables (Copper)</a></h4>
+                          <p>Robust connectivity for RF and telecom applications.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Fiber Optic Cables" data-product-desc="High-speed fiber for long-distance connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=17">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=17" alt="Fiber Optic Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Fiber Optic Cables" data-product-desc="Our fiber optic cables offer ultra-high-speed connectivity for long-distance data transfer. Designed for telecom and data centers, they provide low-latency, high-bandwidth performance with immunity to electromagnetic interference, ensuring reliable communication." data-product-img="assets/img/network-cables/Fiber Optic Cables.jpg">
+                          <img src="assets/img/network-cables/Fiber Optic Cables.jpg" alt="Fiber Optic Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Fiber Optic Cables</a></h4>
+                          <p>Ultra-high-speed connectivity for long-distance data transfer.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Single-mode Fiber (SMF)" data-product-desc="SMF for long-haul telecom networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=18">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=18" alt="Single-mode Fiber" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Single-mode Fiber (SMF)" data-product-desc="Our single-mode fiber cables enable long-haul telecom connectivity with minimal signal loss. Supporting high-bandwidth applications, they are ideal for cross-country networks and data centers requiring stable, high-speed data transmission." data-product-img="assets/img/network-cables/Single-mode fiber (SMF).jpg">
+                          <img src="assets/img/network-cables/Single-mode fiber (SMF).jpg" alt="Single-mode Fiber" class="product-img">
                           <h4><a href="#" class="stretched-link">Single-mode Fiber (SMF)</a></h4>
+                          <p>Long-haul connectivity with minimal signal loss.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Multimode Fiber (MMF)" data-product-desc="MMF for short-range data center links." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=19">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=19" alt="Multimode Fiber" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Multimode Fiber (MMF)" data-product-desc="Our multimode fiber cables provide high-speed connectivity for short-range data center applications. Supporting up to 100G speeds, they offer cost-effective solutions for enterprise networks with robust performance and easy installation." data-product-img="assets/img/network-cables/Multimode fiber (MMF).jpg">
+                          <img src="assets/img/network-cables/Multimode fiber (MMF).jpg" alt="Multimode Fiber" class="product-img">
                           <h4><a href="#" class="stretched-link">Multimode Fiber (MMF)</a></h4>
+                          <p>High-speed connectivity for short-range data centers.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="RRU Cable" data-product-desc="RRU cables for radio unit connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=20">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=20" alt="RRU Cable" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="RRU Cable" data-product-desc="Our RRU cables ensure reliable connectivity for radio remote units in telecom networks. Designed for outdoor durability, they support high-speed data and power transmission, ideal for 4G/5G base stations and wireless infrastructure." data-product-img="assets/img/network-cables/RRU Cable.jpg">
+                          <img src="assets/img/network-cables/RRU Cable.jpg" alt="RRU Cable" class="product-img">
                           <h4><a href="#" class="stretched-link">RRU Cable</a></h4>
+                          <p>Reliable connectivity for radio remote units.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="RF Cables" data-product-desc="RF cables for wireless infrastructure." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=21">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=21" alt="RF Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="RF Cables" data-product-desc="Our RF cables provide high-frequency connectivity for wireless infrastructure and telecom systems. With low signal loss and robust shielding, they ensure reliable performance for 5G networks, broadcasting, and satellite communications." data-product-img="assets/img/network-cables/RF Cables.jpg">
+                          <img src="assets/img/network-cables/RF Cables.jpg" alt="RF Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">RF Cables</a></h4>
+                          <p>High-frequency connectivity for wireless infrastructure.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Optical Fiber Cables" data-product-desc="High-capacity optical cables for broadband." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=22">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=22" alt="Optical Fiber Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Optical Fiber Cables" data-product-desc="Our optical fiber cables deliver high-capacity broadband connectivity for telecom and enterprise networks. With superior bandwidth and low latency, they support large-scale data transfer for cloud and 5G applications." data-product-img="assets/img/network-cables/Optical Fiber Cables.jpg">
+                          <img src="assets/img/network-cables/Optical Fiber Cables.jpg" alt="Optical Fiber Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Optical Fiber Cables</a></h4>
+                          <p>High-capacity broadband connectivity for telecom.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power Cables" data-product-desc="Durable power cables for network equipment." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=23">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=23" alt="Power Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power Cables" data-product-desc="Our power cables provide durable, high-capacity power transmission for network equipment. Designed for data centers and telecom, they ensure reliable performance with robust insulation and compatibility with high-power systems." data-product-img="assets/img/network-cables/power cables.jpg">
+                          <img src="assets/img/network-cables/power cables.jpg" alt="Power Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Power Cables</a></h4>
+                          <p>Durable power transmission for network equipment.</p>
                         </div>
                       </div>
                     </div>
                     <div class="row row-cols-1 row-cols-md-3 g-4 d-none" id="network-cables-page-2">
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Grounding and Earthing Cables" data-product-desc="Ensures safety with grounding solutions." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=24">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=24" alt="Grounding and Earthing Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Grounding and Earthing Cables" data-product-desc="Our grounding and earthing cables ensure safety and reliability in network installations. Designed for data centers and telecom, they protect equipment from electrical surges and maintain system stability with robust construction." data-product-img="assets/img/network-cables/Grounding and Earthing Cables.jpg">
+                          <img src="assets/img/network-cables/Grounding and Earthing Cables.jpg" alt="Grounding and Earthing Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Grounding and Earthing Cables</a></h4>
+                          <p>Safety and reliability for network installations.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="E1 Cables" data-product-desc="E1 cables for legacy telecom systems." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=25">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=25" alt="E1 Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="E1 Cables" data-product-desc="Our E1 cables support legacy telecom systems with reliable connectivity for voice and data. Designed for high compatibility and durability, they ensure stable performance in traditional telecom infrastructures." data-product-img="assets/img/network-cables/E1 Cables.jpg">
+                          <img src="assets/img/network-cables/E1 Cables.jpg" alt="E1 Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">E1 Cables</a></h4>
+                          <p>Reliable connectivity for legacy telecom systems.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Ethernet/IP Cables" data-product-desc="High-speed Ethernet cables for IP networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=26">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=26" alt="Ethernet/IP Cables" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Ethernet/IP Cables" data-product-desc="Our Ethernet/IP cables deliver high-speed connectivity for IP-based networks, supporting up to 10G speeds. Ideal for enterprise and data center applications, they ensure low-latency and reliable performance with robust shielding." data-product-img="assets/img/network-cables/Ethernet IP cables.jpg">
+                          <img src="assets/img/network-cables/Ethernet IP cables.jpg" alt="Ethernet/IP Cables" class="product-img">
                           <h4><a href="#" class="stretched-link">Ethernet/IP Cables</a></h4>
+                          <p>High-speed connectivity for IP-based networks.</p>
                         </div>
                       </div>
                     </div>
@@ -322,6 +573,7 @@
                         <li class="page-item"><a class="page-link" href="#" data-page="2" data-tab="network-cables">2</a></li>
                       </ul>
                     </nav>
+                    <a href="contact.html" class="help-link">Can't find what you're looking for? Contact Us</a>
                   </div>
                 </div>
               </div>
@@ -333,45 +585,52 @@
                     <p>Our power hardware ensures uninterrupted power supply and safety for enterprise and data center environments.</p>
                     <div class="row row-cols-1 row-cols-md-3 g-4" id="power-hardware-page-1">
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Rectifiers" data-product-desc="Converts AC to DC for network equipment." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=27">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=27" alt="Rectifiers" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Rectifiers" data-product-desc="Our rectifiers convert AC to DC with high efficiency, ensuring stable power for network equipment. Designed for data centers and telecom, they offer robust performance and energy savings, ideal for high-demand environments." data-product-img="assets/img/power-hardware/Rectifiers.jpg">
+                          <img src="assets/img/power-hardware/Rectifiers.jpg" alt="Rectifiers" class="product-img">
                           <h4><a href="#" class="stretched-link">Rectifiers</a></h4>
+                          <p>Efficient AC to DC conversion for networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Battery Banks" data-product-desc="Backup power for uninterrupted operations." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=28">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=28" alt="Battery Banks" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Battery Banks" data-product-desc="Our battery banks provide reliable backup power for uninterrupted network operations. Designed for data centers and telecom, they offer high capacity and durability, ensuring seamless performance during power outages." data-product-img="assets/img/power-hardware/Battery Banks.jpg">
+                          <img src="assets/img/power-hardware/Battery Banks.jpg" alt="Battery Banks" class="product-img">
                           <h4><a href="#" class="stretched-link">Battery Banks</a></h4>
+                          <p>Reliable backup power for network operations.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="UPS" data-product-desc="Uninterruptible power supply for critical systems." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=29">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=29" alt="UPS" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="UPS" data-product-desc="Our uninterruptible power supplies (UPS) ensure continuous power for critical network systems. With advanced battery management and surge protection, they are ideal for data centers and enterprise environments requiring high reliability." data-product-img="assets/img/power-hardware/ups.jpg">
+                          <img src="assets/img/power-hardware/ups.jpg" alt="UPS" class="product-img">
                           <h4><a href="#" class="stretched-link">UPS</a></h4>
+                          <p>Continuous power for critical network systems.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power Distribution Units" data-product-desc="Distributes power efficiently in data centers." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=30">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=30" alt="Power Distribution Units" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power Distribution Units" data-product-desc="Our power distribution units (PDUs) provide efficient power distribution for data centers. With intelligent monitoring and high-capacity outlets, they ensure reliable power management for high-density network environments." data-product-img="assets/img/power-hardware/Power Distribution Units.jpg">
+                          <img src="assets/img/power-hardware/Power Distribution Units.jpg" alt="Power Distribution Units" class="product-img">
                           <h4><a href="#" class="stretched-link">Power Distribution Units</a></h4>
+                          <p>Efficient power distribution for data centers.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Grounding and Lightning Protection" data-product-desc="Protects equipment from electrical surges." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=31">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=31" alt="Grounding and Lightning Protection" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Grounding and Lightning Protection" data-product-desc="Our grounding and lightning protection systems safeguard network equipment from electrical surges. Designed for telecom and data centers, they ensure system reliability and safety in harsh environments." data-product-img="assets/img/power-hardware/grounding-lighting-protection01.png">
+                          <img src="assets/img/power-hardware/grounding-lighting-protection01.png" alt="Grounding and Lightning Protection" class="product-img">
                           <h4><a href="#" class="stretched-link">Grounding and Lightning Protection</a></h4>
+                          <p>Safeguards equipment from electrical surges.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power System Controllers/SMUs" data-product-desc="Manages power systems for optimal performance." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=32">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=32" alt="Power System Controllers/SMUs" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Power System Controllers/SMUs" data-product-desc="Our power system controllers and SMUs optimize power management for network infrastructure. With real-time monitoring and control, they ensure energy efficiency and reliability for data centers and telecom systems." data-product-img="assets/img/power-hardware/Power System Controllers.jpg">
+                          <img src="assets/img/power-hardware/Power System Controllers.jpg" alt="Power System Controllers/SMUs" class="product-img">
                           <h4><a href="#" class="stretched-link">Power System Controllers/SMUs</a></h4>
+                          <p>Optimizes power management for networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Primary Power Sources (AC and DC)" data-product-desc="Reliable AC/DC power for network infrastructure." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=33">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=33" alt="Primary Power Sources" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Primary Power Sources (AC and DC)" data-product-desc="Our AC/DC primary power sources deliver reliable power for network infrastructure. Designed for telecom and data centers, they ensure consistent performance with high efficiency and robust protection features." data-product-img="assets/img/power-hardware/Primary Power Sources (AC and DC).png">
+                          <img src="assets/img/power-hardware/Primary Power Sources (AC and DC).png" alt="Primary Power Sources" class="product-img">
                           <h4><a href="#" class="stretched-link">Primary Power Sources (AC and DC)</a></h4>
+                          <p>Reliable AC/DC power for network infrastructure.</p>
                         </div>
                       </div>
                     </div>
@@ -380,6 +639,7 @@
                         <li class="page-item"><a class="page-link" href="#" data-page="1" data-tab="power-hardware">1</a></li>
                       </ul>
                     </nav>
+                    <a href="contact.html" class="help-link">Can't find what you're looking for? Contact Us</a>
                   </div>
                 </div>
               </div>
@@ -388,60 +648,69 @@
                   <div class="col-lg-12 details order-2 order-lg-1">
                     <h3>Others</h3>
                     <p class="fst-italic">Comprehensive networking solutions for diverse applications.</p>
-                    <p>Our range of specialized products supports various networking needs, ensuring flexibility and performance.</p>
+                    <p>Our specialized products support various networking needs, ensuring flexibility and performance across industries.</p>
                     <div class="row row-cols-1 row-cols-md-3 g-4" id="others-page-1">
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Radio Access Network" data-product-desc="Supports mobile network connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=34">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=34" alt="Radio Access Network" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Radio Access Network" data-product-desc="Our radio access network solutions enable seamless mobile connectivity for 4G/5G networks. Designed for telecom operators, they offer high-capacity, low-latency performance, ensuring robust wireless communication for urban and rural deployments." data-product-img="assets/img/others/rru.jpg">
+                          <img src="assets/img/others/rru.jpg" alt="Radio Access Network" class="product-img">
                           <h4><a href="#" class="stretched-link">Radio Access Network</a></h4>
+                          <p>Seamless mobile connectivity for 4G/5G networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Outside Plant" data-product-desc="Robust solutions for outdoor networking." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=35">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=35" alt="Outside Plant" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Outside Plant" data-product-desc="Our outside plant solutions provide robust networking for outdoor environments. Designed for telecom and enterprise, they offer weather-resistant connectivity for long-distance data transmission in harsh conditions." data-product-img="assets/img/others/Outside Plant.jpg">
+                          <img src="assets/img/others/Outside Plant.jpg" alt="Outside Plant" class="product-img">
                           <h4><a href="#" class="stretched-link">Outside Plant</a></h4>
+                          <p>Robust networking for outdoor environments.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Transmission" data-product-desc="High-capacity transmission equipment." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=36">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=36" alt="Transmission" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Transmission" data-product-desc="Our transmission equipment supports high-capacity data transfer for telecom networks. With advanced modulation and low-latency performance, it ensures reliable connectivity for long-haul and metro network applications." data-product-img="assets/img/others/Transmission.jpg">
+                          <img src="assets/img/others/Transmission.jpg" alt="Transmission" class="product-img">
                           <h4><a href="#" class="stretched-link">Transmission</a></h4>
+                          <p>High-capacity data transfer for telecom networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Antenna" data-product-desc="Advanced antennas for wireless networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=37">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=37" alt="Antenna" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Antenna" data-product-desc="Our advanced antennas deliver high-performance wireless connectivity for 5G and IoT networks. With wide coverage and robust signal strength, they are ideal for telecom and enterprise applications in urban and rural settings." data-product-img="assets/img/others/Antenna.jpg">
+                          <img src="assets/img/others/Antenna.jpg" alt="Antenna" class="product-img">
                           <h4><a href="#" class="stretched-link">Antenna</a></h4>
+                          <p>High-performance wireless connectivity for 5G/IoT.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Core Network" data-product-desc="Backbone solutions for telecom networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=38">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=38" alt="Core Network" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Core Network" data-product-desc="Our core network solutions provide the backbone for telecom networks, ensuring high-speed, reliable data routing. Designed for scalability, they support 5G and cloud applications with robust performance and low latency." data-product-img="assets/img/others/Core Network.jpg">
+                          <img src="assets/img/others/Core Network.jpg" alt="Core Network" class="product-img">
                           <h4><a href="#" class="stretched-link">Core Network</a></h4>
+                          <p>Backbone for high-speed telecom networks.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="IP Network" data-product-desc="Scalable IP networking solutions." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=39">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=39" alt="IP Network" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="IP Network" data-product-desc="Our IP network solutions deliver scalable, high-speed connectivity for enterprise and data center applications. Supporting advanced routing and low-latency performance, they ensure seamless communication for modern networks." data-product-img="assets/img/others/IP Network.jpg">
+                          <img src="assets/img/others/IP Network.jpg" alt="IP Network" class="product-img">
                           <h4><a href="#" class="stretched-link">IP Network</a></h4>
+                          <p>Scalable, high-speed connectivity for enterprises.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Enterprise Solutions" data-product-desc="Custom networking for enterprise needs." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=40">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=40" alt="Enterprise Solutions" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="Enterprise Solutions" data-product-desc="Our enterprise solutions offer customized networking for business needs, ensuring high-speed, secure connectivity. Designed for scalability and reliability, they support cloud, VoIP, and data-intensive applications with ease." data-product-img="assets/img/others/Enterprise Solutions.jpg">
+                          <img src="assets/img/others/Enterprise Solutions.jpg" alt="Enterprise Solutions" class="product-img">
                           <h4><a href="#" class="stretched-link">Enterprise Solutions</a></h4>
+                          <p>Customized networking for business applications.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="In-building Solutions" data-product-desc="Indoor networking for seamless connectivity." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=41">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=41" alt="In-building Solutions" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="In-building Solutions" data-product-desc="Our in-building solutions provide seamless indoor connectivity for enterprises and commercial spaces. Supporting Wi-Fi, 5G, and IoT, they ensure high-speed, reliable performance for modern smart buildings." data-product-img="assets/img/others/In-building. solutions.jpg">
+                          <img src="assets/img/others/In-building. solutions.jpg" alt="In-building Solutions" class="product-img">
                           <h4><a href="#" class="stretched-link">In-building Solutions</a></h4>
+                          <p>Seamless indoor connectivity for smart buildings.</p>
                         </div>
                       </div>
                       <div class="col">
-                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="ICT" data-product-desc="Integrated ICT solutions for modern networks." data-product-img="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=42">
-                          <img src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80&random=42" alt="ICT" class="product-img">
+                        <div class="service-item position-relative" data-bs-toggle="modal" data-bs-target="#productModal" data-product-name="ICT" data-product-desc="Our integrated ICT solutions combine networking, computing, and communication for modern enterprises. Designed for scalability and efficiency, they support digital transformation with robust, high-performance infrastructure." data-product-img="assets/img/others/ICT.jpg">
+                          <img src="assets/img/others/ICT.jpg" alt="ICT" class="product-img">
                           <h4><a href="#" class="stretched-link">ICT</a></h4>
+                          <p>Integrated solutions for modern enterprise networks.</p>
                         </div>
                       </div>
                     </div>
@@ -450,6 +719,7 @@
                         <li class="page-item"><a class="page-link" href="#" data-page="1" data-tab="others">1</a></li>
                       </ul>
                     </nav>
+                    <a href="contact.html" class="help-link">Can't find what you're looking for? Contact Us</a>
                   </div>
                 </div>
               </div>
@@ -461,7 +731,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
+      <div class="modal-dialog modal-xl">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="productModalLabel"></h5>
@@ -472,7 +742,7 @@
             <p id="modalProductDesc"></p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+            <a href="contact.html" class="btn">Request Quote</a>
           </div>
         </div>
       </div>
@@ -483,7 +753,7 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <img src="assets/img/" alt="Brightlight Footer Logo">
+            <img src="assets/img/logo.png" alt="Brightlight Footer Logo">
             <span class="sitename">Brightlight</span>
           </a>
           <div class="footer-contact pt-3">
@@ -502,20 +772,21 @@
           <h4>Useful Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="services.html">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="services.html#product-development">Product Development</a></li>
-            <li><a href="services.html#solution-design">Solution Design</a></li>
-            <li><a href="services.html#testing-services">Testing Services</a></li>
-            <li><a href="services.html#online-procurement">Online Procurement</a></li>
-            <li><a href="services.html#technical-support">Technical Support</a></li>
+            <li><a href="services.html#in-building-solution">In-building Solution</a></li>
+            <li><a href="services.html#asset-recovery">Asset Recovery</a></li>
+            <li><a href="services.html#installation-deployment">Installation and Deployment</a></li>
+            <li><a href="services.html#maintenance">Maintenance</a></li>
+            <li><a href="services.html#decommissioned-hardware-purchasing">Decommissioned Hardware Purchasing</a></li>
+            <li><a href="services.html#network-optimization">Network Optimization</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-3 footer-links">
