@@ -196,3 +196,23 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navMenu = document.querySelector('.navmenu');
+  const body = document.body;
+
+  // Toggle mobile nav on burger menu click
+  mobileNavToggle.addEventListener('click', function (e) {
+    e.stopPropagation(); // Prevent click from bubbling to document
+    body.classList.toggle('mobile-nav-active');
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function (e) {
+    // Check if click is outside navmenu and mobile-nav-toggle
+    if (!navMenu.contains(e.target) && !mobileNavToggle.contains(e.target) && body.classList.contains('mobile-nav-active')) {
+      body.classList.remove('mobile-nav-active');
+    }
+  });
+});
