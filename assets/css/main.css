@@ -390,7 +390,6 @@ h6 {
   }
 }
 
-/* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
@@ -399,6 +398,8 @@ h6 {
     margin-right: 10px;
     cursor: pointer;
     transition: color 0.3s;
+    position: relative;
+    z-index: 9999;
   }
 
   .navmenu {
@@ -409,16 +410,18 @@ h6 {
   .navmenu ul {
     display: none;
     list-style: none;
-    position: absolute;
-    inset: 60px 20px 20px 20px;
+    position: fixed;
+    top: 60px; /* Position below the branding header (60px height) */
+    right: 10px; /* Align with the burger menu, accounting for margin-right */
+    width: 200px; /* Compact width for the small box */
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
-    overflow-y: auto;
-    transition: 0.3s;
-    z-index: 9998;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    max-height: 300px; /* Limit height to prevent overflow */
+    transition: all 0.3s ease-in-out;
   }
 
   .navmenu a,
@@ -491,12 +494,12 @@ h6 {
   }
 
   .mobile-nav-active {
-    overflow: hidden;
+    overflow: visible; /* Allow page content to remain accessible */
   }
 
   .mobile-nav-active .mobile-nav-toggle {
-    color: #FFFFFF;
-    position: absolute;
+    color: var(--accent-color); /* Change color to indicate active state */
+    position: fixed;
     font-size: 32px;
     top: 15px;
     right: 15px;
@@ -504,16 +507,8 @@ h6 {
     z-index: 9999;
   }
 
-  .mobile-nav-active .navmenu {
-    position: fixed;
-    overflow: hidden;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    transition: 0.3s;
-  }
-
   .mobile-nav-active .navmenu>ul {
-    display: block;
+    display: block; /* Show the menu when active */
   }
 }
 
