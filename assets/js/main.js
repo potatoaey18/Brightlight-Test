@@ -210,9 +210,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Close mobile nav when clicking outside
   document.addEventListener('click', function (e) {
-    // Check if click is outside navmenu and mobile-nav-toggle
-    if (!navMenu.contains(e.target) && !mobileNavToggle.contains(e.target) && body.classList.contains('mobile-nav-active')) {
+    if (
+      !navMenu.contains(e.target) &&
+      !mobileNavToggle.contains(e.target) &&
+      body.classList.contains('mobile-nav-active')
+    ) {
       body.classList.remove('mobile-nav-active');
     }
+  });
+
+  // Close mobile nav when clicking a menu link (optional, for better UX)
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function () {
+      body.classList.remove('mobile-nav-active');
+    });
   });
 });
